@@ -1608,6 +1608,7 @@ static int responseCallList(Parcel &p, void *response, size_t responselen) {
         p.writeInt32(p_cur->isMpty);
         p.writeInt32(p_cur->isMT);
         p.writeInt32(p_cur->als);
+        p.writeInt32(p_cur->isVideo);
         p.writeInt32(p_cur->isVoice);
         p.writeInt32(p_cur->isVoicePrivacy);
         writeStringToParcel(p, p_cur->number);
@@ -1636,6 +1637,7 @@ static int responseCallList(Parcel &p, void *response, size_t responselen) {
             (p_cur->isMT)?"mt":"mo",
             p_cur->als,
             (p_cur->isVoice)?"voc":"nonvoc",
+            (p_cur->isVideo)?"video":"no_video",
             (p_cur->isVoicePrivacy)?"evp":"noevp");
         appendPrintBuf("%s%s,cli=%d,name='%s',%d]",
             printBuf,
