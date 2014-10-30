@@ -1845,7 +1845,7 @@ static int responseCallList(Parcel &p, void *response, size_t responselen) {
             p_cur->index,
             callStateToString(p_cur->state),
             p_cur->toa);
-        appendPrintBuf("%s%s,%s,als=%d,%s,%s,",
+        appendPrintBuf("%s%s,%s,als=%d,%s,%s,%s,",
             printBuf,
             (p_cur->isMpty)?"conf":"norm",
             (p_cur->isMT)?"mt":"mo",
